@@ -7,9 +7,14 @@ if(file_exists(__DIR__.'/'.$file))
 {
     require_once(__DIR__ . '/vendor/autoload.php');
     (Dotenv\Dotenv::createUnsafeImmutable(__DIR__,$file))->load();
-    error_log("Environment loaded from ".$file);
 } else {
     error_log("*WARNING* environment file not found: ".$file);
+}
+
+$hostname_env = getenv("DB_HOST");
+if($hostname_env != null){
+    define( 'WP_HOME', 'http://fictional-university.local' );
+    define( 'WP_SITEURL', 'http://fictional-university.local' );
 }
 
 /**
@@ -42,7 +47,7 @@ define( 'DB_USER', getenv('DB_USER'));
 define( 'DB_PASSWORD', getenv('DB_PASSWORD'));
 
 /** MySQL hostname */
-define( 'DB_HOST', getenv('DB_HOST'));
+define( 'DB_HOST', getenv('DB_HOST') ?: 'mysql');
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', getenv('DB_CHARSET'));
