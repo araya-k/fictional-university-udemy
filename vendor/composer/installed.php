@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '6fa9a9c51d95f767f9a7385cdd7aef4ff8a64f16',
+    'reference' => '90cb6316f9a036d66c83a455154355001839fab7',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '6fa9a9c51d95f767f9a7385cdd7aef4ff8a64f16',
+      'reference' => '90cb6316f9a036d66c83a455154355001839fab7',
     ),
     'graham-campbell/result-type' => 
     array (
@@ -37,15 +37,6 @@
       array (
       ),
       'reference' => '994ecccd8f3283ecf5ac33254543eb0ac946d525',
-    ),
-    'squizlabs/php_codesniffer' => 
-    array (
-      'pretty_version' => '3.6.0',
-      'version' => '3.6.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'ffced0d2c8fa8e6cdc4d695a743271fab6c38625',
     ),
     'symfony/polyfill-ctype' => 
     array (
