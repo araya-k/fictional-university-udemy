@@ -1,5 +1,17 @@
 <?php
 define( 'WP_CACHE', true );
+
+$app_env = getenv("APP_ENV");
+$file = $app_env == null ? ".env" : ".env.".$app_env;
+if(file_exists(__DIR__.'/'.$file))
+{
+    require_once(__DIR__ . '/vendor/autoload.php');
+    (Dotenv\Dotenv::createUnsafeImmutable(__DIR__,$file))->load();
+    error_log("Environment loaded from ".$file);
+} else {
+    error_log("*WARNING* environment file not found: ".$file);
+}
+
 /**
  * The base configuration for WordPress
  *
@@ -21,22 +33,22 @@ define( 'WP_CACHE', true );
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'u291573966_iwHJg' );
+define( 'DB_NAME', getenv('DB_NAME'));
 
 /** MySQL database username */
-define( 'DB_USER', 'u291573966_4J5eO' );
+define( 'DB_USER', getenv('DB_USER'));
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'ATV3QUT558' );
+define( 'DB_PASSWORD', getenv('DB_PASSWORD'));
 
 /** MySQL hostname */
-define( 'DB_HOST', 'mysql' );
+define( 'DB_HOST', getenv('DB_HOST'));
 
 /** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8' );
+define( 'DB_CHARSET', getenv('DB_CHARSET'));
 
 /** The Database Collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
+define( 'DB_COLLATE', getenv('DB_COLLATE'));
 
 /**
  * Authentication Unique Keys and Salts.
